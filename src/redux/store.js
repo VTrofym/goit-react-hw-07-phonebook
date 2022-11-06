@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {
-  persistStore,
-  persistReducer,
+  // persistStore,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -9,17 +8,9 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
 import { rootReducer } from "./rootReduser";
 
-const persistConfig = {
-  key: 'root',
-  version: 1,
-  storage,
-  whitelist: ['contacts'],
-}
-
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+const persistedReducer = rootReducer
 
 export const store = configureStore({
   reducer: persistedReducer,
@@ -31,4 +22,4 @@ export const store = configureStore({
     }),
 });
 
-export let persistor = persistStore(store)
+export default store;
