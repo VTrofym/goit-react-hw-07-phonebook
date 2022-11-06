@@ -1,0 +1,13 @@
+.boxInput {
+  outline: 1px solid black;
+  padding: 15px 10px;
+}
+
+.input {
+  margin-bottom: 25px;
+}
+
+.addContact {
+  margin-top: 25px;
+  background-color: rgba(1, 1, 255, 0.281);
+}
