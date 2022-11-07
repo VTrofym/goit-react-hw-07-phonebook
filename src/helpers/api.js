@@ -6,3 +6,17 @@ export const getData = async () => {
   )
   return response.data
 }
+
+export const setData = async (body) => {
+  const response = await axios.post(
+    'https://63682e03d1d09a8fa621f12a.mockapi.io/contacts, body'
+  )
+  return response.data
+}
+
+export const deleteData = async (id) => {
+  const response = await axios.delete(
+    `https://63682e03d1d09a8fa621f12a.mockapi.io/contacts/${id}`
+  )
+  return response.data
+}

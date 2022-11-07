@@ -1,13 +1,14 @@
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 // import { nanoid } from 'nanoid';
 import css from './ContactForm.module.css';
+import { addContact } from 'redux/contacts/operations';
 // import { addContactAction } from 'redux/contacts/sliceContacts';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleChange = event => {
     const { value, name } = event.target;
@@ -26,14 +27,10 @@ export const ContactForm = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    // addContact(name, number);
+    dispatch(addContact({ name, number }));
     setName('');
     setNumber('');
   };
-
-  // const addContact = (name, number) => {
-  //   dispatch(addContactAction({ name, number, id: nanoid() }));
-  // };
 
   return (
     <form className={css.boxInput} onSubmit={handleSubmit}>

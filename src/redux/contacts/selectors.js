@@ -5,3 +5,7 @@ export const getContacts = state => {
 }
 
 export const getSelectorsContacts = (state) => state.contacts.contacts
+
+export const setSelectorsContacts = (state) => state.contacts.contacts
+
+export const deleteSelectorsContacts = (state) => state.contacts.contacts
