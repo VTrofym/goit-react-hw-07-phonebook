@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getContacts } from './operations'; 
+import { getApiAllContacts } from './operations'; 
 
 const Status = {
   init: "INIT",
@@ -32,15 +32,15 @@ export const contactsSlice = createSlice({
   //   }
   // },
   extraReducers: {
-    [getContacts.pending](state) {
+    [getApiAllContacts.pending](state) {
       state.status = Status.loading
     },
-    [getContacts.fulfilled](state, action) {
+    [getApiAllContacts.fulfilled](state, action) {
       console.log('action :>> ', action);
       state.status = Status.success
       state.contacts = [...action.payload]
     },
-    [getContacts.rejected](state) {
+    [getApiAllContacts.rejected](state) {
       state.status = Status.error
     },
   }

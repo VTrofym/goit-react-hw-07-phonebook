@@ -4,4 +4,4 @@ export const getContacts = state => {
   )
 }
 
-export const getApiContacts = (state) => state.contacts.contacts
+export const getSelectorsContacts = (state) => state.contacts.contacts
