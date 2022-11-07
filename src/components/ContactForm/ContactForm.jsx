@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
 import css from './ContactForm.module.css';
-import { addContactAction } from 'redux/contacts/sliceContacts';
+// import { addContactAction } from 'redux/contacts/sliceContacts';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -26,14 +26,14 @@ export const ContactForm = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    addContact(name, number);
+    // addContact(name, number);
     setName('');
     setNumber('');
   };
 
-  const addContact = (name, number) => {
-    dispatch(addContactAction({ name, number, id: nanoid() }));
-  };
+  // const addContact = (name, number) => {
+  //   dispatch(addContactAction({ name, number, id: nanoid() }));
+  // };
 
   return (
     <form className={css.boxInput} onSubmit={handleSubmit}>

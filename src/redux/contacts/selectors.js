@@ -3,3 +3,5 @@ export const getContacts = state => {
     contact.name.toLowerCase().includes(state.filter.filter.toLowerCase())
   )
 }
+
+export const getApiContacts = (state) => state.contacts.contacts
