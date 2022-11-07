@@ -28,6 +28,7 @@ export const ContactForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
     dispatch(addContact({ name, number }));
+    console.log('name, number :>> ', name, number);
     setName('');
     setNumber('');
   };

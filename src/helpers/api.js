@@ -7,9 +7,9 @@ export const getData = async () => {
   return response.data
 }
 
-export const setData = async (body) => {
+export const setData = async (data) => {
   const response = await axios.post(
-    'https://63682e03d1d09a8fa621f12a.mockapi.io/contacts, body'
+    'https://63682e03d1d09a8fa621f12a.mockapi.io/contacts, data'
   )
   return response.data
 }
