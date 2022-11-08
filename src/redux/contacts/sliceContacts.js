@@ -16,21 +16,6 @@ export const initialState = {
 export const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
-  // reducers: {
-  //   addContactAction: (state, action) => {
-  //     if (
-  //     state.contacts.find(
-  //       contact => contact.name.toLowerCase() === action.payload.name.toLowerCase()
-  //     )
-  //   ) {
-  //     return alert(`${action.payload.name} is already in contacts!`);
-  //   }
-  //     state.contacts=[...state.contacts, action.payload]
-  //   },
-  //   deleteContactAction: (state, action) => {
-  //     state.contacts=state.contacts.filter(contact=>contact.id !== action.payload)
-  //   }
-  // },
   extraReducers: {
     [getApiAllContacts.pending](state) {
       state.status = Status.loading
@@ -67,5 +52,4 @@ export const contactsSlice = createSlice({
   }
 })
 
-// export const { addContactAction, deleteContactAction } = contactsSlice.actions
 export default contactsSlice.reducer

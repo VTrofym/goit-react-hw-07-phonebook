@@ -1,7 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-// import { getContacts } from 'redux/contacts/selectors';
-// import { deleteContactAction } from 'redux/contacts/sliceContacts';
-import { getSelectorsContacts } from 'redux/contacts/selectors';
+import { selectContacts } from 'redux/contacts/selectors';
 import { getApiAllContacts, deleteContact } from 'redux/contacts/operations';
 
 import css from './ContactList.module.css';
@@ -9,7 +7,7 @@ import { useEffect } from 'react';
 
 export function ContactList() {
   const dispatch = useDispatch();
-  const allContacts = useSelector(getSelectorsContacts);
+  const allContacts = useSelector(selectContacts);
 
   useEffect(() => {
     dispatch(getApiAllContacts());
