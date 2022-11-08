@@ -6,4 +6,3 @@ export const getContacts = state => {
 
 export const selectContacts = (state) => state.contacts.contacts
 
-
